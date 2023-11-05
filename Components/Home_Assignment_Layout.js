@@ -16,38 +16,48 @@ export default function Home_Assignment_Layout() {
 
 
     return (
-        <View style={assignmentData.closingDay === 'Today' ? styles.containerToday : styles.containerTomorrow}>
-            <View style={styles.row1}>
-                <Text style={styles.subDetLine}>{assignmentData.subCode}: {assignmentData.subName}</Text>
-                <View style={assignmentData.closingDay === 'Today' ? styles.subDayToday : styles.subDayTomorrow}>
-                    <Text style={assignmentData.closingDay === 'Today' ? styles.subDayTextToday : styles.subDayTextTomorrow}>
-                        {assignmentData.closingDay}
-                    </Text>
+        <View style={styles.container}>
+            <View style={assignmentData.closingDay === 'Today' ? styles.containerToday : styles.containerTomorrow}>
+                <View style={styles.row1}>
+                    <Text style={styles.subDetLine}>{assignmentData.subCode}: {assignmentData.subName}</Text>
+                    <View style={assignmentData.closingDay === 'Today' ? styles.subDayToday : styles.subDayTomorrow}>
+                        <Text style={assignmentData.closingDay === 'Today' ? styles.subDayTextToday : styles.subDayTextTomorrow}>
+                            {assignmentData.closingDay}
+                        </Text>
+                    </View>
                 </View>
+                <Text style={styles.description}>{assignmentData.smallDesc}</Text>
+                <Text style={styles.closingTime}>Closing: {assignmentData.closingTime}</Text>
             </View>
-            <Text style={styles.description}>{assignmentData.smallDesc}</Text>
-            <Text style={styles.closingTime}>Closing: {assignmentData.closingTime}</Text>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+    container: {
+        width: 500,
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
     containerToday: {
+        width: 550,
         borderWidth: 1,
         borderColor: '#FE958C',
         backgroundColor: '#FFE8E6',
         borderRadius: 15,
-        paddingHorizontal: 10,
-        paddingVertical: 15,
+        paddingHorizontal: 20,
+        paddingVertical: 20,
     },
 
     containerTomorrow: {
+        width: 550,
         borderWidth: 1,
         borderColor: '#624DF6',
         backgroundColor: '#E6E8FB',
         borderRadius: 15,
-        paddingHorizontal: 10,
-        paddingVertical: 15,
+        paddingHorizontal: 20,
+        paddingVertical: 20,
     },
 
     row1: {
@@ -71,7 +81,7 @@ const styles = StyleSheet.create({
 
     subDayTomorrow: {
         borderWidth: 1,
-        borderColor: '#624DF6 ',
+        borderColor: '#624DF6',
         backgroundColor: '#CED2FF',
         paddingHorizontal: 15,
         paddingVertical: 5,

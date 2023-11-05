@@ -36,16 +36,19 @@ export default function Home_Class_Layout() {
 
 const styles = StyleSheet.create({
     container: {
+        width: 432,
         borderWidth: 1,
         borderColor: '#5AB08F',
         backgroundColor: 'rgba(183, 255, 229, 0.44)',
         borderRadius: 15,
         paddingHorizontal: 10,
         paddingVertical: 15,
+        paddingLeft: 20,
+        paddingVertical: 20,
     },
 
     row1: {
-        width: '60%',
+        width: '80%',
         flexDirection: 'row',
         justifyContent: 'space-between',
     },
@@ -74,5 +77,6 @@ const styles = StyleSheet.create({
     closingTime: {
         fontSize: 18,
         color: "#979E9B",
+        marginTop: 10,
     },
 });

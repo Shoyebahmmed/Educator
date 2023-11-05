@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import { MaterialCommunityIcons, Ionicons } from 'expo-vector-icons';
 import IndicatorLayout from './Indicator_Layout';
 
@@ -116,6 +116,10 @@ export default function Navigation_Side_Tab_Layout (){
 
     return (
         <View style={styles.sidebar}>
+        <View style={styles.logoCont}>
+            <Image source={require('./img/logo.png')} style={styles.logo} />
+        </View>
+        
             {options.map(renderOption)}
         </View>
     );
@@ -128,8 +132,18 @@ const styles = StyleSheet.create({
         backgroundColor: '#F2EFFF',
         paddingLeft: 50,
         paddingTop: 50,
-
+        borderRadius: 30,
       },
+    logoCont: {
+        width: 189,
+        height: 38,
+        overflow: 'hidden',
+        marginBottom: 90,
+    },
+    logo: {
+        width: '100%',
+        height: '100%',
+    },
     option: {
         flexDirection: 'row',
         alignItems: 'center',

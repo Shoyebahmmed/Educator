@@ -66,14 +66,14 @@ export default function CustomCalendar() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 40,
+    width: 432,
   },
   header: {
     paddingLeft: 10,
     paddingBottom: 10,
   },
   dateStyle: {
-    fontWeight: '900',
+    fontWeight: '600',
     fontSize: 18,
   },
   calendar: {
