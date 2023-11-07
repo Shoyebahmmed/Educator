@@ -1,42 +1,32 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-export default function Home_Class_Layout() {
+export default function Home_Class_Layout({ classItem }) {
 
-    const [classData, setClassData] = useState({
-        subCode: 'ENG101',
-        subName: 'English 1st Paper',
-        class: 'XII',
-        section: 'A',
-        location: '3.123',
-        startTime: '09:30 AM',
-        endTime: '10:30 AM',
-        assignmentID: 'ABCD123456'
-    });
-
+    console.log('aaaa ', classItem);
 
     return (
-        <View style={styles.container}>
+        <TouchableOpacity style={styles.container}>
             <View style={styles.row1}>
-                <Text style={styles.subDetLine}>{classData.subCode}: {classData.subName}</Text>
+                <Text style={styles.subDetLine}>{classItem.subCode}: {classItem.subName}</Text>
             </View>
 
             <View style={styles.content}>
                 <View style={styles.row2}>
-                    <Text style={styles.details}>Class: {classData.class}</Text>
-                    <Text style={styles.details}>Section: {classData.section}</Text>
+                    <Text style={styles.details}>Class: {classItem.class}</Text>
+                    <Text style={styles.details}>Section: {classItem.section}</Text>
                 </View>
-                <Text style={styles.details}>Location: {classData.location}</Text>
+                <Text style={styles.details}>Location: {classItem.location}</Text>
             </View>
-            <Text style={styles.closingTime}>{classData.startTime} - {classData.endTime}</Text>
-        </View>
+            <Text style={styles.closingTime}>{classItem.startTime} - {classItem.endTime}</Text>
+        </TouchableOpacity>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        width: 432,
+        width: '85%',
         borderWidth: 1,
         borderColor: '#5AB08F',
         backgroundColor: 'rgba(183, 255, 229, 0.44)',
@@ -45,10 +35,11 @@ const styles = StyleSheet.create({
         paddingVertical: 15,
         paddingLeft: 20,
         paddingVertical: 20,
+        marginBottom: 20,
     },
 
     row1: {
-        width: '80%',
+        width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
     },

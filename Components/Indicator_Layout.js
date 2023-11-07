@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-export default function IndicatorLayout({children}) {
+export default function IndicatorLayout({ children }) {
   return (
     <View style={styles.shapeContainer}>
       <View style={styles.Box1} />
@@ -35,30 +35,30 @@ const styles = StyleSheet.create({
   },
   topBox1: {
     position: 'absolute',
-    top: -30, 
+    top: -30,
     width: 40,
     height: 30,
     borderBottomRightRadius: 50,
-    backgroundColor: '#F2EFFF',
+    backgroundColor: '#F9F8FF',
     alignSelf: 'flex-end',
     overflow: 'hidden',
   },
   topBox2: {
     position: 'absolute',
-    top: 70, 
+    top: 70,
     right: 0,
     width: 40,
-    height:30,
+    height: 30,
     borderTopRightRadius: 50,
-    backgroundColor: '#F2EFFF',
+    backgroundColor: '#F9F8FF',
   },
 
   Box1: {
     position: 'absolute',
-    top: -30, 
+    top: -30,
     right: 0,
     width: 40,
-    height:130,
+    height: 130,
     backgroundColor: '#FFFFFF',
   },
 });

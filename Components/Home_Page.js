@@ -1,29 +1,46 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, ScrollView, useWindowDimensions, TouchableOpacity } from 'react-native';
 import Home_Inbox_Noti_Layout from './Home_Inbox_Noti_Layout';
+import Home_Inbox_View from './Home_Inbox_View';
 import Home_Assignment_Layout from './Home_Assignment_Layout';
+import Home_Assignment_View from './Home_Assignment_View';
 import Home_Class_Layout from './Home_Class_Layout';
+import Home_Class_View from './Home_Class_View';
 import Home_Calendar_Layout from './Home_Calendar_Layout';
 import Navigation_Side_Tab_Layout from './Navigation_Side_Tab_Layout';
 import { MaterialCommunityIcons, Ionicons } from 'expo-vector-icons';
 import TESTYYYP from './TESTYYYP';
 import Indicator_Layout from './Indicator_Layout';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
 
 export default function Home_Page() {
 
   const [totalClassToday, setTotalClassToday] = useState('5');
   const [totalAssignmentDue, setTotalAssignmentDue] = useState('12');
   const [totalInboxMessage, setTotalInboxMessage] = useState('15');
+  const [newNotificationStatus , setNewNotificationStatus ] = useState(true);
+
+  const windowDimensions = useWindowDimensions();
+
+
+
+  const [screenHeight, setScreenHeight] = useState(windowDimensions.height);
+  const [screenWidth, setScreenWidth] = useState(windowDimensions.width);
+
+  useEffect(() => {
+    setScreenHeight(windowDimensions.height);
+    setScreenWidth(windowDimensions.width);
+  }, [windowDimensions])
 
   const [userDetails, setUserDetails] = useState({
     name: "Shoyeb Ahmmed",
     userID: "sa108",
     profileImg: "./img/profile.jpg"
-  });
+  }, []);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { height: screenHeight, width: screenWidth }]}>
       <View style={styles.mainView}>
         <View style={styles.sidNavBar}>
           <Navigation_Side_Tab_Layout />
@@ -31,14 +48,15 @@ export default function Home_Page() {
 
         <View style={styles.rightSide}>
           <View style={styles.topBar}>
-            <View style={styles.notification}>
+            <TouchableOpacity style={styles.notification}>
               <MaterialCommunityIcons
                 name="bell"
                 size={45}
                 color='#624DF6'
               />
-            </View>
-            <View style={styles.account}>
+              {newNotificationStatus && <View style={styles.newNotificationDot} />}
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.account}>
               <View style={styles.imgShape}>
                 <Image source={require('./img/profile.jpg')} style={styles.roundImage} />
               </View>
@@ -46,7 +64,7 @@ export default function Home_Page() {
                 <Text style={styles.userName}>{userDetails.name}</Text>
                 <Text style={styles.userID}>{userDetails.userID}</Text>
               </View>
-            </View>
+            </TouchableOpacity>
           </View>
 
           <View style={styles.bodyPart}>
@@ -62,9 +80,13 @@ export default function Home_Page() {
               <View style={styles.calenderBar}>
                 <Home_Calendar_Layout />
               </View>
-              <View style={styles.classes}>
-                <Home_Class_Layout />
-              </View>
+              <ScrollView
+                style={styles.classes}
+                contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center' }}
+                showsVerticalScrollIndicator={false}
+              >
+                <Home_Class_View />
+              </ScrollView>
             </View>
 
             <View style={styles.assignments}>
@@ -76,9 +98,13 @@ export default function Home_Page() {
                 </View>
               </View>
 
-              <View style={styles.assignmentBar}>
-                <Home_Assignment_Layout />
-              </View>
+              <ScrollView
+                style={styles.assignmentBar}
+                contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center' }}
+                showsVerticalScrollIndicator={false}
+              >
+                <Home_Assignment_View />
+              </ScrollView>
 
             </View>
 
@@ -90,9 +116,13 @@ export default function Home_Page() {
                 </View>
               </View>
 
-              <View style={styles.inboxMess}>
-                <Home_Inbox_Noti_Layout />
-              </View>
+              <ScrollView
+                style={styles.inboxMess}
+                contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center' }}
+                showsVerticalScrollIndicator={false}
+              >
+                <Home_Inbox_View />
+              </ScrollView>
             </View>
 
           </View>
@@ -107,6 +137,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#ECE9FF',
     padding: 20,
+    overflow: 'hidden',
   },
 
   mainView: {
@@ -127,7 +158,7 @@ const styles = StyleSheet.create({
   },
 
   topBar: {
-    flex: 0.45,
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'center',
@@ -154,8 +185,19 @@ const styles = StyleSheet.create({
   notification: {
     justifyContent: 'center',
     alignItems: 'center',
-    paddingRight: 30,
+    marginRight: 30,
   },
+
+  newNotificationDot: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: 'red',
+  },
+
   account: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -176,11 +218,14 @@ const styles = StyleSheet.create({
   },
 
   bodyPart: {
-    flex: 2.5,
+    flex: 7,
     flexDirection: 'row',
     marginLeft: 20,
   },
 
+  calenderBar: {
+    marginBottom: 20,
+  },
   classSchedule: {
     flex: 0.8,
     marginTop: 30,
@@ -211,7 +256,8 @@ const styles = StyleSheet.create({
   },
 
   classes: {
-    paddingTop: 20,
+    width: '100%',
+    flex: 1,
   },
 
   notiBack: {
@@ -240,19 +286,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 
-  class: {
-    paddingTop: 10,
-  },
-
   assignments: {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
     marginTop: 30,
+    marginBottom: 30,
   },
 
   assignmentBar: {
     marginTop: 10,
+    width: '100%',
+    flex: 1,
   },
 
   inboxMessages: {
@@ -260,11 +305,11 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     borderLeftWidth: 1,
     borderLeftColor: '#A4A5FD',
-    paddingLeft: 20,
     paddingTop: 30,
+    paddingBottom: 10,
   },
 
   inboxMess: {
-
+    flex: 1,
   },
 });

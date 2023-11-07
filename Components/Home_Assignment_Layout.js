@@ -1,47 +1,36 @@
 import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-export default function Home_Assignment_Layout() {
-
-    const [assignmentData, setAssignmentData] = useState({
-        subCode: 'ENG101',
-        subName: 'English 1st Paper',
-        smallDesc: 'Write an essay discussing the impact of social media on society and its role in shaping modern communication.',
-        closingTime: '11:59 PM',
-        closingDate: '10/13/2023',
-        closingDay: 'Tomorrow',
-        assignmentID: 'ABCD123456'
-    });
-
-
+export default function Home_Assignment_Layout({ assignmentItem }) {
     return (
-        <View style={styles.container}>
-            <View style={assignmentData.closingDay === 'Today' ? styles.containerToday : styles.containerTomorrow}>
+        <TouchableOpacity style={styles.container}>
+            <View style={assignmentItem.closingDay === 'Today' ? styles.containerToday : styles.containerTomorrow}>
                 <View style={styles.row1}>
-                    <Text style={styles.subDetLine}>{assignmentData.subCode}: {assignmentData.subName}</Text>
-                    <View style={assignmentData.closingDay === 'Today' ? styles.subDayToday : styles.subDayTomorrow}>
-                        <Text style={assignmentData.closingDay === 'Today' ? styles.subDayTextToday : styles.subDayTextTomorrow}>
-                            {assignmentData.closingDay}
+                    <Text style={styles.subDetLine}>{assignmentItem.subCode}: {assignmentItem.subName}</Text>
+                    <View style={assignmentItem.closingDay === 'Today' ? styles.subDayToday : styles.subDayTomorrow}>
+                        <Text style={assignmentItem.closingDay === 'Today' ? styles.subDayTextToday : styles.subDayTextTomorrow}>
+                            {assignmentItem.closingDay}
                         </Text>
                     </View>
                 </View>
-                <Text style={styles.description}>{assignmentData.smallDesc}</Text>
-                <Text style={styles.closingTime}>Closing: {assignmentData.closingTime}</Text>
+                <Text style={styles.description}>{assignmentItem.smallDesc}</Text>
+                <Text style={styles.closingTime}>Closing: {assignmentItem.closingTime}</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     );
 }
 
 const styles = StyleSheet.create({
     container: {
-        width: 500,
+        width: '85%',
         flex: 1,
-        alignItems: 'center',
+        alignassignmentItems: 'center',
         justifyContent: 'center',
-      },
+        marginBottom: 20,
+    },
     containerToday: {
-        width: 550,
+        width: '100%',
         borderWidth: 1,
         borderColor: '#FE958C',
         backgroundColor: '#FFE8E6',
@@ -51,7 +40,7 @@ const styles = StyleSheet.create({
     },
 
     containerTomorrow: {
-        width: 550,
+        width: '100%',
         borderWidth: 1,
         borderColor: '#624DF6',
         backgroundColor: '#E6E8FB',

@@ -13,15 +13,15 @@ export default function CustomCalendar() {
 
   const customDatesStyles = date => {
     const isToday = moment(date).isSame(moment(todayDate), 'day');
-    
+
     return {
       dateContainerStyle: {
         backgroundColor: isToday ? '#FFE7B7' : '#F2EFFF', // Use different color for todayDate
         borderRadius: 50,
         justifyContent: 'center', // Center the date vertically within the circle
         alignItems: 'center', // Center the date horizontally within the circle
-        width: isToday? 60 : 40, // Set the width and height of the circle
-        height: isToday? 60 : 40, 
+        width: isToday ? 60 : 40, // Set the width and height of the circle
+        height: isToday ? 60 : 40,
       },
       dateNumberStyle: {
         color: isToday ? '#FB6D00' : '#A4A5FD', // Use different text color for todayDate
@@ -29,7 +29,7 @@ export default function CustomCalendar() {
       },
     };
   };
-  
+
 
   return (
     <View style={styles.container}>
