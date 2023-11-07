@@ -9,6 +9,7 @@ import Home_Class_View from './Home_Class_View';
 import Home_Calendar_Layout from './Home_Calendar_Layout';
 import Navigation_Side_Tab_Layout from './Navigation_Side_Tab_Layout';
 import { MaterialCommunityIcons, Ionicons } from 'expo-vector-icons';
+import Load_Screen from './Load_screen';
 import TESTYYYP from './TESTYYYP';
 import Indicator_Layout from './Indicator_Layout';
 import { useState, useEffect } from 'react';
@@ -20,6 +21,8 @@ export default function Home_Page() {
   const [totalAssignmentDue, setTotalAssignmentDue] = useState('12');
   const [totalInboxMessage, setTotalInboxMessage] = useState('15');
   const [newNotificationStatus , setNewNotificationStatus ] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  
 
   const windowDimensions = useWindowDimensions();
 
@@ -31,6 +34,11 @@ export default function Home_Page() {
   useEffect(() => {
     setScreenHeight(windowDimensions.height);
     setScreenWidth(windowDimensions.width);
+
+    setTimeout(() => {
+
+      setIsLoading(false);
+    }, 3000);
   }, [windowDimensions])
 
   const [userDetails, setUserDetails] = useState({
@@ -41,6 +49,8 @@ export default function Home_Page() {
 
   return (
     <View style={[styles.container, { height: screenHeight, width: screenWidth }]}>
+    { isLoading ? <Load_Screen /> : (
+      <View style={[styles.content, { height: screenHeight, width: screenWidth }]}>
       <View style={styles.mainView}>
         <View style={styles.sidNavBar}>
           <Navigation_Side_Tab_Layout />
@@ -128,12 +138,19 @@ export default function Home_Page() {
           </View>
         </View>
       </View>
+      </View>
+     ) }
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+
+  content: {
     flex: 1,
     backgroundColor: '#ECE9FF',
     padding: 20,
