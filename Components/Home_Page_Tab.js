@@ -36,7 +36,6 @@ export default function Home_Page_Tab() {
 
   console.log(screenWidth, screenHeight);
 
-
   const userDetails = {
     name: 'Shoyeb Ahmmed',
     userID: 'sa108',

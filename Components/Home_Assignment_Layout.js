@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     },
 
     subDetLine: {
-        fontSize: 22,
+        fontSize: 20,
         fontWeight: 'bold',
     },
 
@@ -61,8 +61,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#FF6255',
         backgroundColor: '#FFCFCB',
-        paddingHorizontal: '5%', 
-        paddingVertical: '2%', 
+        paddingHorizontal: '3%', 
+        paddingVertical: '1%', 
         borderRadius: 15,
     },
 
@@ -70,19 +70,19 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#624DF6',
         backgroundColor: '#CED2FF',
-        paddingHorizontal: '5%', 
-        paddingVertical: '2%', 
+        paddingHorizontal: '3%', 
+        paddingVertical: '1%', 
         borderRadius: 15,
     },
 
     subDayTextToday: {
-        fontSize: 18,
+        fontSize: 15,
         fontWeight: 'bold',
         color: '#FF2E2E',
     },
 
     subDayTextTomorrow: {
-        fontSize: 18,
+        fontSize: 15,
         fontWeight: 'bold',
         color: '#0C23FF',
     },
@@ -91,11 +91,11 @@ const styles = StyleSheet.create({
         marginTop: 10,
         width: '80%', 
         marginBottom: 20,
-        fontSize: 18,
+        fontSize: 17,
     },
 
     closingTime: {
-        fontSize: 18,
+        fontSize: 17,
         color: "#979E9B",
     },
 });
