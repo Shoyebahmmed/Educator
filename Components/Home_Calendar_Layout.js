@@ -66,7 +66,7 @@ export default function CustomCalendar() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: 432,
+    width: 500,
   },
   header: {
     paddingLeft: 10,

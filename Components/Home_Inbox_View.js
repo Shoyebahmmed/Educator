@@ -9,7 +9,7 @@ export default function Home_Inbox_View() {
             senderName: 'James Oliver',
             senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
             senderSendTime: '17 min ago',
-            senderMessageID: 'ABCD123456',
+            senderMessageID: '1',
             senderProfImg: './img/profile.jpg',
         },
 
@@ -17,7 +17,7 @@ export default function Home_Inbox_View() {
             senderName: 'James Oliver',
             senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
             senderSendTime: '17 min ago',
-            senderMessageID: 'ABCD123456',
+            senderMessageID: '2',
             senderProfImg: './img/profile.jpg',
         },
 
@@ -25,7 +25,7 @@ export default function Home_Inbox_View() {
             senderName: 'James Oliver',
             senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
             senderSendTime: '17 min ago',
-            senderMessageID: 'ABCD123456',
+            senderMessageID: '3',
             senderProfImg: './img/profile.jpg',
         },
 
@@ -33,7 +33,7 @@ export default function Home_Inbox_View() {
             senderName: 'James Oliver',
             senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
             senderSendTime: '17 min ago',
-            senderMessageID: 'ABCD123456',
+            senderMessageID: '4',
             senderProfImg: './img/profile.jpg',
         },
 
@@ -41,7 +41,7 @@ export default function Home_Inbox_View() {
             senderName: 'James Oliver',
             senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
             senderSendTime: '17 min ago',
-            senderMessageID: 'ABCD123456',
+            senderMessageID: '5',
             senderProfImg: './img/profile.jpg',
         },
 
@@ -49,7 +49,7 @@ export default function Home_Inbox_View() {
             senderName: 'James Oliver',
             senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
             senderSendTime: '17 min ago',
-            senderMessageID: 'ABCD123456',
+            senderMessageID: '6',
             senderProfImg: './img/profile.jpg',
         },
 
@@ -57,7 +57,7 @@ export default function Home_Inbox_View() {
             senderName: 'James Oliver',
             senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
             senderSendTime: '17 min ago',
-            senderMessageID: 'ABCD123456',
+            senderMessageID: '7',
             senderProfImg: './img/profile.jpg',
         },
 
@@ -65,22 +65,14 @@ export default function Home_Inbox_View() {
             senderName: 'James Oliver',
             senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
             senderSendTime: '17 min ago',
-            senderMessageID: 'ABCD123456',
+            senderMessageID: '8',
             senderProfImg: './img/profile.jpg',
         },
         {
             senderName: 'James Oliver',
             senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
             senderSendTime: '17 min ago',
-            senderMessageID: 'ABCD123456',
-            senderProfImg: './img/profile.jpg',
-        },
-
-        {
-            senderName: 'James Oliver',
-            senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
-            senderSendTime: '17 min ago',
-            senderMessageID: 'ABCD123456',
+            senderMessageID: '9',
             senderProfImg: './img/profile.jpg',
         },
 
@@ -88,7 +80,7 @@ export default function Home_Inbox_View() {
             senderName: 'James Oliver',
             senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
             senderSendTime: '17 min ago',
-            senderMessageID: 'ABCD123456',
+            senderMessageID: '10',
             senderProfImg: './img/profile.jpg',
         },
 
@@ -96,7 +88,7 @@ export default function Home_Inbox_View() {
             senderName: 'James Oliver',
             senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
             senderSendTime: '17 min ago',
-            senderMessageID: 'ABCD123456',
+            senderMessageID: '11',
             senderProfImg: './img/profile.jpg',
         },
 
@@ -104,7 +96,7 @@ export default function Home_Inbox_View() {
             senderName: 'James Oliver',
             senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
             senderSendTime: '17 min ago',
-            senderMessageID: 'ABCD123456',
+            senderMessageID: '12',
             senderProfImg: './img/profile.jpg',
         },
 
@@ -112,7 +104,7 @@ export default function Home_Inbox_View() {
             senderName: 'James Oliver',
             senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
             senderSendTime: '17 min ago',
-            senderMessageID: 'ABCD123456',
+            senderMessageID: '13',
             senderProfImg: './img/profile.jpg',
         },
 
@@ -120,7 +112,7 @@ export default function Home_Inbox_View() {
             senderName: 'James Oliver',
             senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
             senderSendTime: '17 min ago',
-            senderMessageID: 'ABCD123456',
+            senderMessageID: '14',
             senderProfImg: './img/profile.jpg',
         },
 
@@ -128,7 +120,15 @@ export default function Home_Inbox_View() {
             senderName: 'James Oliver',
             senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
             senderSendTime: '17 min ago',
-            senderMessageID: 'ABCD123456',
+            senderMessageID: '15',
+            senderProfImg: './img/profile.jpg',
+        },
+
+        {
+            senderName: 'James Oliver',
+            senderMessagePrv: 'Just to remind everyone to bring along a coaxial…',
+            senderSendTime: '17 min ago',
+            senderMessageID: '16',
             senderProfImg: './img/profile.jpg',
         },
     ];

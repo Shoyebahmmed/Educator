@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function Home_Class_Layout({ classItem }) {
 
-    console.log('aaaa ', classItem);
 
     return (
         <TouchableOpacity style={styles.container}>
@@ -31,11 +29,10 @@ const styles = StyleSheet.create({
         borderColor: '#5AB08F',
         backgroundColor: 'rgba(183, 255, 229, 0.44)',
         borderRadius: 15,
-        paddingHorizontal: 10,
-        paddingVertical: 15,
-        paddingLeft: 20,
-        paddingVertical: 20,
-        marginBottom: 20,
+        paddingHorizontal: '4%', 
+        paddingTop: '4%', 
+        paddingBottom: '6%', 
+        marginBottom: '6%', 
     },
 
     row1: {
@@ -45,7 +42,7 @@ const styles = StyleSheet.create({
     },
 
     content: {
-        paddingBottom: 5,
+        paddingBottom: '2%', 
     },
 
     row2: {
@@ -55,19 +52,19 @@ const styles = StyleSheet.create({
     },
 
     subDetLine: {
-        fontSize: 22,
+        fontSize: 18, 
         fontWeight: 'bold',
-        paddingBottom: 15,
+        paddingBottom: '2%', 
     },
 
     details: {
         width: '80%',
-        fontSize: 18,
+        fontSize: 18, 
     },
 
     closingTime: {
-        fontSize: 18,
+        fontSize: 18, 
         color: "#979E9B",
-        marginTop: 10,
+        marginTop: '2%', 
     },
 });

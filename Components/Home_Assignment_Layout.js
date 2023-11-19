@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function Home_Assignment_Layout({ assignmentItem }) {
@@ -23,30 +22,29 @@ export default function Home_Assignment_Layout({ assignmentItem }) {
 
 const styles = StyleSheet.create({
     container: {
-        width: '85%',
-        flex: 1,
-        alignassignmentItems: 'center',
+        width: '100%', 
+        alignItems: 'center',
         justifyContent: 'center',
         marginBottom: 20,
     },
     containerToday: {
-        width: '100%',
+        width: '90%', 
         borderWidth: 1,
         borderColor: '#FE958C',
         backgroundColor: '#FFE8E6',
         borderRadius: 15,
-        paddingHorizontal: 20,
-        paddingVertical: 20,
+        paddingHorizontal: '5%', 
+        paddingVertical: '5%', 
     },
 
     containerTomorrow: {
-        width: '100%',
+        width: '90%', 
         borderWidth: 1,
         borderColor: '#624DF6',
         backgroundColor: '#E6E8FB',
         borderRadius: 15,
-        paddingHorizontal: 20,
-        paddingVertical: 20,
+        paddingHorizontal: '5%', 
+        paddingVertical: '5%', 
     },
 
     row1: {
@@ -63,8 +61,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#FF6255',
         backgroundColor: '#FFCFCB',
-        paddingHorizontal: 15,
-        paddingVertical: 5,
+        paddingHorizontal: '5%', 
+        paddingVertical: '2%', 
         borderRadius: 15,
     },
 
@@ -72,8 +70,8 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#624DF6',
         backgroundColor: '#CED2FF',
-        paddingHorizontal: 15,
-        paddingVertical: 5,
+        paddingHorizontal: '5%', 
+        paddingVertical: '2%', 
         borderRadius: 15,
     },
 
@@ -91,7 +89,7 @@ const styles = StyleSheet.create({
 
     description: {
         marginTop: 10,
-        width: '80%',
+        width: '80%', 
         marginBottom: 20,
         fontSize: 18,
     },

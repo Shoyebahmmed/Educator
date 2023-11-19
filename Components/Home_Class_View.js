@@ -13,7 +13,7 @@ export default function Home_Class_View() {
             location: '3.123',
             startTime: '09:30 AM',
             endTime: '10:30 AM',
-            subID: 'ABCD123456'
+            subID: '1'
         },
 
         {
@@ -24,7 +24,7 @@ export default function Home_Class_View() {
             location: '3.123',
             startTime: '09:30 AM',
             endTime: '10:30 AM',
-            subID: 'ABCD123456'
+            subID: '2'
         },
 
         {
@@ -35,7 +35,7 @@ export default function Home_Class_View() {
             location: '3.123',
             startTime: '09:30 AM',
             endTime: '10:30 AM',
-            subID: 'ABCD123456'
+            subID: '3'
         },
 
         {
@@ -46,7 +46,7 @@ export default function Home_Class_View() {
             location: '3.123',
             startTime: '09:30 AM',
             endTime: '10:30 AM',
-            subID: 'ABCD123456'
+            subID: '4'
         },
 
         {
@@ -57,7 +57,7 @@ export default function Home_Class_View() {
             location: '3.123',
             startTime: '09:30 AM',
             endTime: '10:30 AM',
-            subID: 'ABCD123456'
+            subID: '5'
         },
 
         {
@@ -68,7 +68,7 @@ export default function Home_Class_View() {
             location: '3.123',
             startTime: '09:30 AM',
             endTime: '10:30 AM',
-            subID: 'ABCD123456'
+            subID: '6'
         },
     ]);
 

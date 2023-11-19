@@ -1,45 +1,56 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
-import { MaterialCommunityIcons, Ionicons } from 'expo-vector-icons';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, View, Text, TouchableOpacity, Image, useWindowDimensions } from 'react-native';
+import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import IndicatorLayout from './Indicator_Layout';
+
 
 export default function Navigation_Side_Tab_Layout() {
   const [selectedOption, setSelectedOption] = useState('Home');
 
+
   const options = [
     {
+      id: 1,
       name: 'Home',
       nav_Icon: 'home',
     },
     {
+      id: 2,
       name: 'Dashboard',
       nav_Icon: 'view-dashboard',
     },
     {
+      id: 3,
       name: 'All Classes',
       nav_Icon: 'book-variant',
     },
     {
+      id: 4,
       name: 'Mails',
       nav_Icon: 'email',
     },
     {
+      id: 5,
       name: 'Messages',
       nav_Icon: 'ios-paper-plane',
     },
     {
+      id: 6,
       name: 'Timetable',
       nav_Icon: 'calendar',
     },
     {
+      id: 7,
       name: 'Profile',
       nav_Icon: 'account',
     },
     {
+      id: 8,
       name: 'Settings',
-      nav_Icon: 'settings',
+      nav_Icon: 'settings-sharp',
     },
     {
+      id: 9,
       name: 'Logout',
       nav_Icon: 'logout',
     },
@@ -48,13 +59,13 @@ export default function Navigation_Side_Tab_Layout() {
 
   const renderOption = (option) => {
     const isActive = option.name === selectedOption;
-    const iconProb = option.name === 'Messages';
+    const iconProb = option.name === 'Messages' || option.name === 'Settings';
 
     const content = isActive ? (
       <IndicatorLayout>
         <TouchableOpacity
           style={styles.option}
-          key={option.name}
+          key={option.id}
           onPress={() => setSelectedOption(option.name)}
         >
           <View
@@ -74,7 +85,7 @@ export default function Navigation_Side_Tab_Layout() {
               />
             )}
           </View>
-          <Text style={[styles.optionText, { color: isActive ? '#FF9011' : '#624DF6' }]}>{option.name}</Text>
+          <Text style={[styles.optionText, { color: isActive ? '#FF9011' : '#624DF6'}]}>{option.name}</Text>
         </TouchableOpacity>
       </IndicatorLayout>
     ) : (
@@ -98,7 +109,7 @@ export default function Navigation_Side_Tab_Layout() {
             />
           )}
         </View>
-        <Text style={[styles.optionText, { color: isActive ? '#FF9011' : '#624DF6' }]}>{option.name}</Text>
+        <Text style={[styles.optionText, { color: isActive ? '#FF9011' : '#624DF6'}]}>{option.name}</Text>
       </TouchableOpacity>
     );
 
@@ -130,8 +141,8 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     backgroundColor: '#F9F8FF',
-    paddingLeft: 50,
-    paddingTop: 50,
+    paddingLeft: "10%",
+    paddingTop: "20%",
     borderRadius: 30,
   },
   logoCont: {
@@ -139,6 +150,7 @@ const styles = StyleSheet.create({
     height: 38,
     overflow: 'hidden',
     marginBottom: 90,
+    marginLeft: '10%',
   },
   logo: {
     width: '100%',

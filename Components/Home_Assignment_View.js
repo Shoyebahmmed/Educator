@@ -12,7 +12,7 @@ export default function Home_Assignment_View() {
             closingTime: '11:59 PM',
             closingDate: '10/13/2023',
             closingDay: 'Today',
-            assignmentID: 'ABCD123456'
+            assignmentID: '1'
         },
 
         {
@@ -22,7 +22,7 @@ export default function Home_Assignment_View() {
             closingTime: '11:59 PM',
             closingDate: '10/13/2023',
             closingDay: 'Today',
-            assignmentID: 'ABCD123456'
+            assignmentID: '2'
         },
 
         {
@@ -32,7 +32,7 @@ export default function Home_Assignment_View() {
             closingTime: '11:59 PM',
             closingDate: '10/13/2023',
             closingDay: 'Tomorrow',
-            assignmentID: 'ABCD123456'
+            assignmentID: '3'
         },
 
         {
@@ -42,7 +42,7 @@ export default function Home_Assignment_View() {
             closingTime: '11:59 PM',
             closingDate: '10/13/2023',
             closingDay: 'Tomorrow',
-            assignmentID: 'ABCD123456'
+            assignmentID: '4'
         },
 
         {
@@ -52,7 +52,7 @@ export default function Home_Assignment_View() {
             closingTime: '11:59 PM',
             closingDate: '10/13/2023',
             closingDay: 'Tomorrow',
-            assignmentID: 'ABCD123456'
+            assignmentID: '5'
         }
     ]);
 
