@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-export default function IndicatorLayout({ children }) {
+export default function IndicatorLayout({ children, inkey }) {
   return (
-    <View style={styles.shapeContainer}>
+    <View style={styles.shapeContainer} key={inkey}>
       <View style={styles.Box1} />
       <View style={styles.topBox1} />
       <View style={styles.roundedBox}>

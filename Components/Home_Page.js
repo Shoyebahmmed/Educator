@@ -41,13 +41,10 @@ export default function Home_Page() {
     // }, 3000);
   }, [windowDimensions]);
 
-  const isTabletView = screenWidth >= 1920 && screenHeight >= 1080;
+  const isTabletView = screenWidth > 600 && screenHeight > 600;
+  // console.log(screenHeight, screenWidth);
 
-  const userDetails = {
-    name: 'Shoyeb Ahmmed',
-    userID: 'sa108',
-    profileImg: './img/profile.jpg',
-  };
+
 
   return (
     <View style={[styles.container, { height: screenHeight, width: screenWidth }]}>

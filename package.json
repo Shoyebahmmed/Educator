@@ -13,6 +13,8 @@
     "@expo/webpack-config": "^19.0.0",
     "decimal.js": "^10.4.3",
     "expo": "~49.0.13",
+    "expo-faded-scrollview": "^1.0.11",
+    "expo-screen-orientation": "~6.0.6",
     "expo-status-bar": "~1.6.0",
     "ldrs": "^1.0.1",
     "moment": "^2.29.4",

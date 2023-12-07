@@ -3,10 +3,10 @@ import {
   View,
   Text,
   Image,
-  ScrollView,
   useWindowDimensions,
   TouchableOpacity,
   StyleSheet,
+  ScrollView
 } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import Load_Screen from './Load_screen';
@@ -15,7 +15,9 @@ import Home_Inbox_View from './Home_Inbox_View';
 import Home_Assignment_View from './Home_Assignment_View';
 import Home_Class_View from './Home_Class_View';
 import Home_Calendar_Layout from './Home_Calendar_Layout';
-
+import * as ScreenOrientation from 'expo-screen-orientation';
+import Top_Bar_Layout from './Top_Bar_Layout';
+//import { ScrollView } from 'expo-faded-scrollview';
 
 export default function Home_Page_Tab() {
   const [totalClassToday, setTotalClassToday] = useState('5');
@@ -34,13 +36,7 @@ export default function Home_Page_Tab() {
     setScreenWidth(windowDimensions.width);
   }, [windowDimensions]);
 
-  console.log(screenWidth, screenHeight);
 
-  const userDetails = {
-    name: 'Shoyeb Ahmmed',
-    userID: 'sa108',
-    profileImg: './img/profile.jpg',
-  };
 
   return (
     <View style={[styles.container, { height: screenHeight, width: screenWidth }]}>
@@ -52,19 +48,7 @@ export default function Home_Page_Tab() {
 
             <View style={styles.rightSide}>
               <View style={styles.topBar}>
-                <TouchableOpacity style={styles.notification}>
-                  <MaterialCommunityIcons name="bell" size={45} color="#624DF6" />
-                  {newNotificationStatus && <View style={styles.newNotificationDot} />}
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.account}>
-                  <View style={styles.imgShape}>
-                    <Image source={require('./img/profile.jpg')} style={styles.roundImage} />
-                  </View>
-                  <View style={styles.details}>
-                    <Text style={styles.userName}>{userDetails.name}</Text>
-                    <Text style={styles.userID}>{userDetails.userID}</Text>
-                  </View>
-                </TouchableOpacity>
+                <Top_Bar_Layout />
               </View>
 
               <View style={styles.bodyPart}>
@@ -158,64 +142,12 @@ const styles = StyleSheet.create({
 
   topBar: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
     paddingHorizontal: 20,
     marginHorizontal: 30,
     borderBottomWidth: 1,
     borderBottomColor: '#A4A5FD',
   },
-
-  imgShape: {
-    width: 70,
-    height: 70,
-    borderRadius: 50,
-    backgroundColor: '#F5F5F5',
-    overflow: 'hidden',
-  },
-
-  roundImage: {
-    width: '100%',
-    height: '100%',
-    borderRadius: 25,
-  },
-
-  notification: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 30,
-  },
-
-  newNotificationDot: {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-    backgroundColor: 'red',
-  },
-
-  account: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingLeft: 30,
-    borderLeftWidth: 1,
-    borderLeftColor: '#A4A5FD',
-  },
-  details: {
-    marginLeft: 10,
-  },
-  userName: {
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
-  userID: {
-    fontSize: 14,
-    color: '#ccc',
-  },
-
+  
   bodyPart: {
     flex: 7,
     flexDirection: 'row',
@@ -223,6 +155,9 @@ const styles = StyleSheet.create({
   },
 
   calenderBar: {
+    flex: 0.25,
+    width: '100%',
+    padding: 10,
     marginBottom: 20,
   },
   classSchedule: {

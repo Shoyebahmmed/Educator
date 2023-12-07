@@ -62,7 +62,7 @@ export default function Navigation_Side_Tab_Layout() {
     const iconProb = option.name === 'Messages' || option.name === 'Settings';
 
     const content = isActive ? (
-      <IndicatorLayout>
+      <IndicatorLayout inkey={option.id}>
         <TouchableOpacity
           style={styles.option}
           key={option.id}
@@ -91,7 +91,7 @@ export default function Navigation_Side_Tab_Layout() {
     ) : (
       <TouchableOpacity
         style={[styles.option, { paddingLeft: 25, paddingTop: 15 }]}
-        key={option.name}
+        key={option.id}
         onPress={() => setSelectedOption(option.name)}
       >
         <View style={[styles.circle, { backgroundColor: isActive ? '#FFEEC6' : '#DCDDFF' }]}>
@@ -114,7 +114,7 @@ export default function Navigation_Side_Tab_Layout() {
     );
 
     return (
-      <View style={{ marginBottom: 20, paddingLeft: 20 }}>
+      <View key={option.id} style={{ marginBottom: 20, paddingLeft: 20 }}>
         {content}
       </View>
     );

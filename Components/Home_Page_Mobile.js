@@ -17,6 +17,7 @@ import Home_Calendar_Layout from './Home_Calendar_Layout';
 import Home_Mobile_Top_Bar from './Home_Mobile_Top_Bar';
 import Home_Mobile_Bottom_Nav from './Home_Mobile_Bottom_Nav';
 import Home_Calendar_Mobile_View from './Home_Calendar_Mobile_View';
+import * as ScreenOrientation from 'expo-screen-orientation';
 
 export default function Home_Page_Mobile() {
   const [totalClassToday, setTotalClassToday] = useState('5');
