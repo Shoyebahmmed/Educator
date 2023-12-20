@@ -34,6 +34,7 @@ export default function Post_Top_Bar() {
 
 const styles = StyleSheet.create({
     container: {
+        height: '100%',
         flexDirection: 'row',
         alignItems: 'center',
         padding: 10,

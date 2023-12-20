@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     borderTopWidth: 1,
-    borderTopColor: '#cccccc'
+    borderTopColor: '#cccccc',
+    height: 60
   },
 
   options: {

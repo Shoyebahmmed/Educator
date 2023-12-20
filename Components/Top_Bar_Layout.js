@@ -8,7 +8,7 @@ import {
     TouchableOpacity,
     StyleSheet,
 } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
 
 
 export default function Top_Bar_Layout() {
@@ -23,7 +23,7 @@ export default function Top_Bar_Layout() {
     return (
         <View style={styles.topBar}>
             <TouchableOpacity style={styles.notification}>
-                <MaterialCommunityIcons name="bell" size={45} color="#624DF6" />
+                <MaterialIcons name="notifications" size={45} color="#624DF6" />
                 {newNotificationStatus && <View style={styles.newNotificationDot} />}
             </TouchableOpacity>
             <TouchableOpacity style={styles.account}>

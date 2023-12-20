@@ -12,7 +12,7 @@ import {
 import Dash_Post_View from './Dash_Post_View';
 import Top_Bar_Layout from './Top_Bar_Layout';
 import Navigation_Side_Tab_Layout from './Navigation_Side_Tab_Layout';
-import Dash_Photo_View from './Dash_Photo_View';
+import Dash_Post_Layout from './Dash_Post_Layout';
 
 
 export default function Dash_Page_Tab() {
@@ -37,6 +37,8 @@ export default function Dash_Page_Tab() {
 
   return (
     <View style={[styles.container, { height: screenHeight, width: screenWidth }]}>
+
+    {/* <Dash_Post_Layout /> */}
       <View style={styles.content}>
         <View style={styles.mainView}>
           <View style={styles.leftSide}>
@@ -47,18 +49,9 @@ export default function Dash_Page_Tab() {
               <Top_Bar_Layout />
             </View>
             <View style={styles.postBody}>
-
-              <View style={{ width: '70%', padding: 10}}>
-              <ScrollView style={{flex: 1, padding: 10,  height: '80%' }}>
+              <ScrollView style={{ padding: 20, paddingHorizontal: '13%' }}>
               <Dash_Post_View />
               </ScrollView>
-
-              </View>
-
-
-              <View style={{ width: '30%', backgroundColor: 'lightblue' }}></View>
-
-
             </View>
           </View>
         </View>
