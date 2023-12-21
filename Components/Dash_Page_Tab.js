@@ -13,11 +13,12 @@ import Dash_Post_View from './Dash_Post_View';
 import Top_Bar_Layout from './Top_Bar_Layout';
 import Navigation_Side_Tab_Layout from './Navigation_Side_Tab_Layout';
 import Dash_Post_Layout from './Dash_Post_Layout';
-
+import Dash_Ques_View from './Dash_Ques_View';
 
 export default function Dash_Page_Tab() {
 
   const windowDimensions = useWindowDimensions();
+  const [selectedOption, setSelectedOption] = useState('Community Wall');
 
   const [screenHeight, setScreenHeight] = useState(windowDimensions.height);
   const [screenWidth, setScreenWidth] = useState(windowDimensions.width);
@@ -33,12 +34,25 @@ export default function Dash_Page_Tab() {
 
 
 
+  const renderContentView = () => {
+    switch (selectedOption) {
+      case 'Community Wall':
+        return (
+          <ScrollView style={{ padding: 20 }}>
+          <Dash_Post_View />
+          </ScrollView>
+        );
+      case 'QueryHub':
+        return <Dash_Ques_View />;
+      default:
+        return null;
+    }
+  };
+
 
 
   return (
     <View style={[styles.container, { height: screenHeight, width: screenWidth }]}>
-
-    {/* <Dash_Post_Layout /> */}
       <View style={styles.content}>
         <View style={styles.mainView}>
           <View style={styles.leftSide}>
@@ -49,9 +63,42 @@ export default function Dash_Page_Tab() {
               <Top_Bar_Layout />
             </View>
             <View style={styles.postBody}>
-              <ScrollView style={{ padding: 20, paddingHorizontal: '13%' }}>
-              <Dash_Post_View />
-              </ScrollView>
+
+            <View style={styles.buttonArea}>
+          <TouchableOpacity style={[styles.button,
+          {
+            borderBottomWidth: selectedOption === 'Community Wall' ? 2 : null,
+            borderBottomColor: selectedOption === 'Community Wall' ? '#624DF6' : null
+          }]}
+            onPress={() => setSelectedOption('Community Wall')}
+          >
+            <Text
+              style={[styles.buttonText,
+              {
+                color: selectedOption === 'Community Wall' ? 'black' : '#C5C5C5',
+              }]}>
+              Community Wall
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.button,
+            {
+              borderBottomWidth: selectedOption === 'QueryHub' ? 2 : null,
+              borderBottomColor: selectedOption === 'QueryHub' ? '#624DF6' : null
+            }]}
+            onPress={() => setSelectedOption('QueryHub')}
+          >
+            <Text
+              style={[styles.buttonText,
+              {
+                color: selectedOption === 'QueryHub' ? 'black' : '#C5C5C5',
+              }]}>
+              QueryHub
+            </Text>
+          </TouchableOpacity>
+        </View>
+
+              {renderContentView()}
             </View>
           </View>
         </View>
@@ -98,8 +145,27 @@ const styles = StyleSheet.create({
     flex: 4.8,
   },
 
+  buttonArea: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+    marginBottom: 20,
+  },
+
+  button: {
+    flex: 1,
+    padding: 10,
+  },
+
+  buttonText: {
+    fontSize: 17,
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+
   postBody: { 
     flex: 7, 
-    flexDirection: 'row',
+    flexDirection: 'column',
+    paddingHorizontal: '13%',
   },
 });
